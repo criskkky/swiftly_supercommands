@@ -1,0 +1,34 @@
+{
+    "hp.usage": {
+        "en": "Usage: %shp <target> <health> [armor] [helmet]",
+        "es": "Uso: %shp <objetivo> <salud> [armadura] [casco]"
+    },
+    "hp.invalid_target": {
+        "en": "Invalid target",
+        "es": "Objetivo inválido"
+    },
+    "hp.invalid_health": {
+        "en": "Invalid health",
+        "es": "Salud inválida"
+    },
+    "hp.invalid_armor": {
+        "en": "Invalid armor",
+        "es": "Armadura inválida"
+    },
+    "hp.invalid_helmet": {
+        "en": "Invalid helmet (1 or 0)",
+        "es": "Casco inválido (1 o 0)"
+    },
+    "hp.message": {
+        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_NAME}{default} to {green}[{red}{HEALTH}{default} HP{green}]{default}.",
+        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_NAME}{default} en {green}[{red}{HEALTH}{default} HP{green}]{default}."
+    },
+    "hp.message_with_armor": {
+        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_NAME}{default} to {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green}]{default}.",
+        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_NAME}{default} en {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green}]{default}."
+    },
+    "hp.message_with_helmet": {
+        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_NAME}{default} to {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green} | {yellow}{HELMET}{default} HELMET{green}]{default}.",
+        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_NAME}{default} en {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green} | {yellow}{HELMET}{default} CASCO{green}]{default}."
+    }
+}
