@@ -24,23 +24,23 @@
         "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_NAME}{default} en {green}[{red}{HEALTH}{default} HP{green}]{default}."
     },
     "hp.message_with_armor": {
-        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_NAME}{default} to {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green}]{default}.",
-        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_NAME}{default} en {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green}]{default}."
+        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_NAME}{default} to {green}[{red}{HEALTH}{default} HP{default} | {blue}{ARMOR}{default} ARMOR{green}]{default}.",
+        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_NAME}{default} en {green}[{red}{HEALTH}{default} HP{default} | {blue}{ARMOR}{default} ARMOR{green}]{default}."
     },
     "hp.message_with_helmet": {
-        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_NAME}{default} to {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green} | {yellow}{HELMET}{default} HELMET{green}]{default}.",
-        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_NAME}{default} en {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green} | {yellow}{HELMET}{default} CASCO{green}]{default}."
+        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_NAME}{default} to {green}[{red}{HEALTH}{default} HP{default} | {blue}{ARMOR}{default} ARMOR{default} | {yellow}{HELMET}{default} HELMET{green}]{default}.",
+        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_NAME}{default} en {green}[{red}{HEALTH}{default} HP{default} | {blue}{ARMOR}{default} ARMOR{default} | {yellow}{HELMET}{default} CASCO{green}]{default}."
     },
     "hp.mult_message": {
         "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_COUNT}{default} players to {green}[{red}{HEALTH}{default} HP{green}]{default}.",
         "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_COUNT}{default} jugadores en {green}[{red}{HEALTH}{default} HP{green}]{default}."
     },
     "hp.mult_message_with_armor": {
-        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_COUNT}{default} players to {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green}]{default}.",
-        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_COUNT}{default} jugadores en {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green}]{default}."
+        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_COUNT}{default} players to {green}[{red}{HEALTH}{default} HP{default} | {blue}{ARMOR}{default} ARMOR{green}]{default}.",
+        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_COUNT}{default} jugadores en {green}[{red}{HEALTH}{default} HP{default} | {blue}{ARMOR}{default} ARMOR{green}]{default}."
     },
     "hp.mult_message_with_helmet": {
-        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_COUNT}{default} players to {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green} | {yellow}{HELMET}{default} HELMET{green}]{default}.",
-        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_COUNT}{default} jugadores en {green}[{red}{HEALTH}{default} HP{green} | {blue}{ARMOR}{default} ARMOR{green} | {yellow}{HELMET}{default} CASCO{green}]{default}."
+        "en": "{green}{ADMIN_NAME}{default} set {green}{PLAYER_COUNT}{default} players to {green}[{red}{HEALTH}{default} HP{default} | {blue}{ARMOR}{default} ARMOR{default} | {yellow}{HELMET}{default} HELMET{green}]{default}.",
+        "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_COUNT}{default} jugadores en {green}[{red}{HEALTH}{default} HP{default} | {blue}{ARMOR}{default} ARMOR{default} | {yellow}{HELMET}{default} CASCO{green}]{default}."
     }
 }
