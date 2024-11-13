@@ -13,7 +13,7 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
     
         -- Permission Check
         if not hasAccess then
-            return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("admins.no_permission"))
+            return ReplyToCommand(playerid, config:Fetch("admins.prefix"), string.format(FetchTranslation("admins.no_permission"), prefix))
         end
 
         if player:IsValid() then
@@ -22,7 +22,7 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
     end
     
     if argsCount < 2 then
-        return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("supercommands.hp.usage"))
+        return ReplyToCommand(playerid, config:Fetch("admins.prefix"), string.format(FetchTranslation("supercommands.hp.usage"), prefix))
     end
 
     local players = FindPlayersByTarget(args[1], true)
