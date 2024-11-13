@@ -38,26 +38,26 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
     local armor = nil
     if argsCount >= 3 then
         armor = tonumber(args[3])
-            if not armor then
-                return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("supercommands.hp.invalid_armor"))
-            end
+        if not armor then
+            return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("supercommands.hp.invalid_armor"))
+        end
     end
 
     local helmet = nil
     if argsCount >= 4 then
         helmet = tonumber(args[4])
-            if not helmet then
-                return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("supercommands.hp.invalid_helmet"))
-            end
+        if not helmet then
+            return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("supercommands.hp.invalid_helmet"))
+        end
     end
 
     for i = 1, #players do
-            local pl = players[i]
-            pl:CBaseEntity().Health = health
-            pl:CBaseEntity().Armor = armor or pl:CBaseEntity().Armor
-            pl:CBaseEntity().Helmet = helmet or pl:CBaseEntity().Helmet
+        local pl = players[i]
+        pl:CBaseEntity().Health = health
+        pl:CBaseEntity().Armor = armor or pl:CBaseEntity().Armor
+        pl:CBaseEntity().Helmet = helmet or pl:CBaseEntity().Helmet
 
-            if pl:CBaseEntity().Health <= 0 then
+        if pl:CBaseEntity().Health <= 0 then
             pl:Kill()
         end
     end
@@ -67,47 +67,46 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
     if #players > 1 then
         if argsCount == 2 then
             message = FetchTranslation("supercommands.hp.mult_message")
-            :gsub("{ADMIN_NAME}", admin)
-            :gsub("{PLAYER_COUNT}", tostring(#players))
-            :gsub("{HEALTH}", tostring(health))
+                :gsub("{ADMIN_NAME}", admin)
+                :gsub("{PLAYER_COUNT}", tostring(#players))
+                :gsub("{HEALTH}", tostring(health))
         elseif argsCount == 3 then
             message = FetchTranslation("supercommands.hp.mult_message_with_armor")
-            :gsub("{ADMIN_NAME}", admin)
-            :gsub("{PLAYER_COUNT}", tostring(#players))
-            :gsub("{HEALTH}", tostring(health))
-            :gsub("{ARMOR}", tostring(armor))
-            elseif argsCount == 4 then
-                message = FetchTranslation("supercommands.hp.mult_message_with_helmet")
+                :gsub("{ADMIN_NAME}", admin)
+                :gsub("{PLAYER_COUNT}", tostring(#players))
+                :gsub("{HEALTH}", tostring(health))
+                :gsub("{ARMOR}", tostring(armor))
+        elseif argsCount == 4 then
+            message = FetchTranslation("supercommands.hp.mult_message_with_helmet")
                 :gsub("{ADMIN_NAME}", admin)
                 :gsub("{PLAYER_COUNT}", tostring(#players))
                 :gsub("{HEALTH}", tostring(health))
                 :gsub("{ARMOR}", tostring(armor))
                 :gsub("{HELMET}", tostring(helmet))
-            end
-            ReplyToCommand(playerid, config:Fetch("admins.prefix"), message)
-        else
-            -- Message handling for single player
-            local pl = players[1]
-            if argsCount == 2 then
-                message = FetchTranslation("supercommands.hp.message")
+        end
+        ReplyToCommand(playerid, config:Fetch("admins.prefix"), message)
+    else
+        -- Message handling for single player
+        local pl = players[1]
+        if argsCount == 2 then
+            message = FetchTranslation("supercommands.hp.message")
                 :gsub("{ADMIN_NAME}", admin)
                 :gsub("{PLAYER_NAME}", pl:CBasePlayerController().PlayerName)
                 :gsub("{HEALTH}", tostring(health))
-            elseif argsCount == 3 then
-                message = FetchTranslation("supercommands.hp.message_with_armor")
+        elseif argsCount == 3 then
+            message = FetchTranslation("supercommands.hp.message_with_armor")
                 :gsub("{ADMIN_NAME}", admin)
                 :gsub("{PLAYER_NAME}", pl:CBasePlayerController().PlayerName)
                 :gsub("{HEALTH}", tostring(health))
                 :gsub("{ARMOR}", tostring(armor))
-            elseif argsCount == 4 then
-                message = FetchTranslation("supercommands.hp.message_with_helmet")
+        elseif argsCount == 4 then
+            message = FetchTranslation("supercommands.hp.message_with_helmet")
                 :gsub("{ADMIN_NAME}", admin)
                 :gsub("{PLAYER_NAME}", pl:CBasePlayerController().PlayerName)
                 :gsub("{HEALTH}", tostring(health))
                 :gsub("{ARMOR}", tostring(armor))
                 :gsub("{HELMET}", tostring(helmet))
-            end
-            ReplyToCommand(playerid, config:Fetch("admins.prefix"), message)
         end
+        ReplyToCommand(playerid, config:Fetch("admins.prefix"), message)
     end
 end)
