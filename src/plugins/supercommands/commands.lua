@@ -55,9 +55,13 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
         local pl = players[i]
         pl:CBaseEntity().Health = health
         if helmet == 1 then
-            pl:GiveWeapon("item_helmet")
+            NextTick(function()
+                pl:GetWeaponManager():GiveWeapon("item_assaultsuit")
+            end)
         elseif helmet == 0 then
-            pl:CCSPlayerPawn().ArmorValue = 0
+            NextTick(function()
+                pl:CCSPlayerPawn().ArmorValue = 0
+            end)
         end
         pl:CCSPlayerPawn().ArmorValue = armor or pl:CCSPlayerPawn().ArmorValue
 
