@@ -55,7 +55,7 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
         local pl = players[i]
         pl:CBaseEntity().Health = health
         pl:CCSPlayerPawn().ArmorValue = armor or pl:CCSPlayerPawn().ArmorValue
-        --CCSPlayer_ItemServices(pl:CBasePlayerPawn().ItemServices:ToPtr()).HasHelmet = true
+        --CCSPlayer_ItemServices(pl:CBasePlayerPawn().ItemServices:ToPtr()).HasHelmet = helmet or CCSPlayer_ItemServices(pl:CBasePlayerPawn().ItemServices:ToPtr()).HasHelmet
 
         if pl:CBaseEntity().Health <= 0 then
             pl:Kill()
