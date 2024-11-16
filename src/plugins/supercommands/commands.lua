@@ -46,7 +46,7 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
     local helmet = nil
     if argsCount >= 4 then
         helmet = tonumber(args[4])
-        if not helmet then
+        if not helmet or helmet < 0 or helmet > 1 then
             return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("supercommands.hp.invalid_helmet"))
         end
     end
@@ -55,13 +55,9 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
         local pl = players[i]
         pl:CBaseEntity().Health = health
         if helmet == 1 then
-            NextTick(function()
-                pl:GetWeaponManager():GiveWeapon("item_assaultsuit")
-            end)
+            pl:CSSPlayerController().PawnHasHelmet = true
         elseif helmet == 0 then
-            NextTick(function()
-                pl:CCSPlayerPawn().ArmorValue = 0
-            end)
+            pl:CSSPlayerController().PawnHasHelmet = false
         end
         pl:CCSPlayerPawn().ArmorValue = armor or pl:CCSPlayerPawn().ArmorValue
 
