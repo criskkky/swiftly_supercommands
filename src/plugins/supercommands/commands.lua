@@ -55,9 +55,9 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
         local pl = players[i]
         pl:CBaseEntity().Health = health
         if helmet == 1 then
-            pl:CSSPlayerController().PawnHasHelmet = true
+            pl:CCSPlayerController().PawnHasHelmet = true
         elseif helmet == 0 then
-            pl:CSSPlayerController().PawnHasHelmet = false
+            pl:CCSPlayerController().PawnHasHelmet = false
         end
         pl:CCSPlayerPawn().ArmorValue = armor or pl:CCSPlayerPawn().ArmorValue
 
