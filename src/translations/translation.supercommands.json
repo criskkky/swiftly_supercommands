@@ -40,8 +40,8 @@
         "es": "{green}{ADMIN_NAME}{default} estableció a {green}{PLAYER_COUNT}{default} jugadores en {green}[{red}{HEALTH}{default} HP{default} | {blue}{ARMOR}{default} ARMOR{default} | {yellow}{HELMET}{default} CASCO{green}]{default}."
     },
     "give.usage": {
-        "en": "Usage: %sgive <target> <item> [amount]",
-        "es": "Uso: %sgive <objetivo> <objeto> [cantidad]"
+        "en": "Usage: %sgive <target> <weapon>",
+        "es": "Uso: %sgive <objetivo> <arma>"
     },
     "give.invalid_weapon": {
         "en": "Invalid weapon",

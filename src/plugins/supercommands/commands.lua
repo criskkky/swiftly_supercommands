@@ -56,9 +56,9 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
         local pl = players[i]
         pl:CBaseEntity().Health = health
         if helmet == 1 then
-            pl:CCSPlayerController().PawnHasHelmet = true
+            pl:GetWeaponManager():GiveWeapon("item_assaultsuit")
         elseif helmet == 0 then
-            pl:CCSPlayerController().PawnHasHelmet = false
+            pl:GetWeaponManager():RemoveByItemDefinition(51)
         end
         pl:CCSPlayerPawn().ArmorValue = armor or pl:CCSPlayerPawn().ArmorValue
 
@@ -225,7 +225,7 @@ commands:Register("giveitem", function(playerid, args, argsCount, silent, prefix
 
     for i = 1, #players do
         local pl = players[i]
-        pl:GetInventory():AddItem(item)
+        pl:GetWeaponManager():GiveWeapon(item)
     end
 
     -- Message handling for multiple players
