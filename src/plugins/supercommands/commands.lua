@@ -116,10 +116,10 @@ commands:Register("hp", function(playerid, args, argsCount, silent, prefix)
     end
 end)
 
--- !give <target> <weapon> -> only for weapon_name
+-- !give <target> <weapon>
 commands:Register("give", function(playerid, args, argsCount, silent, prefix)
     local admin = nil
-    
+
     if playerid == -1 then
         -- Set admin name to CONSOLE if executed by the server console
         admin = "CONSOLE"
@@ -129,7 +129,7 @@ commands:Register("give", function(playerid, args, argsCount, silent, prefix)
         if not player then return end
 
         local hasAccess = exports["admins"]:HasFlags(playerid, "c")
-    
+        
         -- Permission Check
         if not hasAccess then
             return ReplyToCommand(playerid, config:Fetch("admins.prefix"), string.format(FetchTranslation("admins.no_permission"), prefix))
@@ -139,7 +139,7 @@ commands:Register("give", function(playerid, args, argsCount, silent, prefix)
             admin = player:CBasePlayerController().PlayerName
         end
     end
-    
+
     if argsCount < 2 or argsCount > 2 then
         return ReplyToCommand(playerid, config:Fetch("admins.prefix"), string.format(FetchTranslation("supercommands.give.usage"), prefix))
     end
@@ -150,19 +150,22 @@ commands:Register("give", function(playerid, args, argsCount, silent, prefix)
     end
 
     local weapon = args[2]
-
-    -- Add prefix weapon_ if not exists
-    if not string.find(weapon, "weapon_") then
-        weapon = "weapon_" .. weapon
+    if not weapon or weapon == "" then
+        return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("supercommands.give.invalid_weapon"))
     end
 
-    if not IsValidWeapon(weapon) then
-        return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("supercommands.give.invalid_weapon"))
+    if string.find(weapon, "weapon_") == nil then
+        weapon = "weapon_" .. weapon
     end
 
     for i = 1, #players do
         local pl = players[i]
         pl:GetWeaponManager():GiveWeapon(weapon)
+    end
+
+    -- Better for translation handling
+    if string.find(weapon, "weapon_") == true then
+        weapon = weapon:gsub("weapon_", "")
     end
 
     -- Message handling for multiple players
@@ -172,6 +175,7 @@ commands:Register("give", function(playerid, args, argsCount, silent, prefix)
             :gsub("{ADMIN_NAME}", admin)
             :gsub("{PLAYER_COUNT}", tostring(#players))
             :gsub("{WEAPON}", weapon)
+        ReplyToCommand(playerid, config:Fetch("admins.prefix"), message)
     else
         -- Message handling for single player
         local pl = players[1]
@@ -179,8 +183,8 @@ commands:Register("give", function(playerid, args, argsCount, silent, prefix)
             :gsub("{ADMIN_NAME}", admin)
             :gsub("{PLAYER_NAME}", pl:CBasePlayerController().PlayerName)
             :gsub("{WEAPON}", weapon)
+        ReplyToCommand(playerid, config:Fetch("admins.prefix"), message)
     end
-    ReplyToCommand(playerid, config:Fetch("admins.prefix"), message)
 end)
 
 -- !giveitem <target> <item>
