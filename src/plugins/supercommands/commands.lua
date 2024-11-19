@@ -140,7 +140,7 @@ commands:Register("give", function(playerid, args, argsCount, silent, prefix)
         end
     end
     
-    if argsCount < 2 then
+    if argsCount < 2 or argsCount > 2 then
         return ReplyToCommand(playerid, config:Fetch("admins.prefix"), string.format(FetchTranslation("supercommands.give.usage"), prefix))
     end
 
@@ -208,7 +208,7 @@ commands:Register("giveitem", function(playerid, args, argsCount, silent, prefix
         end
     end
     
-    if argsCount < 2 then
+    if argsCount < 2 or argsCount > 2 then
         return ReplyToCommand(playerid, config:Fetch("admins.prefix"), string.format(FetchTranslation("supercommands.giveitem.usage"), prefix))
     end
 
@@ -271,7 +271,7 @@ commands:Register("givemoney", function(playerid, args, argsCount, silent, prefi
         end
     end
     
-    if argsCount < 2 then
+    if argsCount < 2 or argsCount > 2 then
         return ReplyToCommand(playerid, config:Fetch("admins.prefix"), string.format(FetchTranslation("supercommands.givemoney.usage"), prefix))
     end
 
@@ -333,7 +333,7 @@ commands:Register("setmoney", function(playerid, args, argsCount, silent, prefix
         end
     end
     
-    if argsCount < 2 then
+    if argsCount < 2 or argsCount > 2 then
         return ReplyToCommand(playerid, config:Fetch("admins.prefix"), string.format(FetchTranslation("supercommands.setmoney.usage"), prefix))
     end
 
@@ -395,7 +395,7 @@ commands:Register("melee", function(playerid, args, argsCount, silent, prefix)
         end
     end
     
-    if argsCount < 1 then
+    if argsCount < 1 or argsCount > 1 then
         return ReplyToCommand(playerid, config:Fetch("admins.prefix"), string.format(FetchTranslation("supercommands.melee.usage"), prefix))
     end
 
@@ -451,7 +451,7 @@ commands:Register("disarm", function(playerid, args, argsCount, silent, prefix)
         end
     end
     
-    if argsCount < 1 then
+    if argsCount < 1 or argsCount > 1 then
         return ReplyToCommand(playerid, config:Fetch("admins.prefix"), string.format(FetchTranslation("supercommands.disarm.usage"), prefix))
     end
 
