@@ -150,12 +150,13 @@ commands:Register("give", function(playerid, args, argsCount, silent, prefix)
     end
 
     local weapon = args[2]
-    if not weapon or weapon == "" then
-        return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("supercommands.give.invalid_weapon"))
-    end
-
+    
     if string.find(weapon, "weapon_") == nil then
         weapon = "weapon_" .. weapon
+    end
+    
+    if IsValidWeapon(weapon) == false then
+        return ReplyToCommand(playerid, config:Fetch("admins.prefix"), FetchTranslation("supercommands.give.invalid_weapon"))
     end
 
     for i = 1, #players do
