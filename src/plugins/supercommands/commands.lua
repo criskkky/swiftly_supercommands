@@ -172,7 +172,6 @@ commands:Register("give", function(playerid, args, argsCount, silent, prefix)
             :gsub("{ADMIN_NAME}", admin)
             :gsub("{PLAYER_COUNT}", tostring(#players))
             :gsub("{WEAPON}", weapon)
-        ReplyToCommand(playerid, config:Fetch("admins.prefix"), message)
     else
         -- Message handling for single player
         local pl = players[1]
@@ -180,8 +179,8 @@ commands:Register("give", function(playerid, args, argsCount, silent, prefix)
             :gsub("{ADMIN_NAME}", admin)
             :gsub("{PLAYER_NAME}", pl:CBasePlayerController().PlayerName)
             :gsub("{WEAPON}", weapon)
-        ReplyToCommand(playerid, config:Fetch("admins.prefix"), message)
     end
+    ReplyToCommand(playerid, config:Fetch("admins.prefix"), message)
 end)
 
 -- !giveitem <target> <item>
