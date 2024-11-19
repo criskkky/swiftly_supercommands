@@ -165,7 +165,7 @@ commands:Register("give", function(playerid, args, argsCount, silent, prefix)
     end
 
     -- Better for translation handling
-    if string.find(weapon, "weapon_") == true then
+    if string.find(weapon, "weapon_") then
         weapon = weapon:gsub("weapon_", "")
     end
 
